@@ -3,4 +3,4 @@ sriks023.github.io/portfolio
 
 # Business Analyst 
 
-#### Technical Skills: Python, SQL, PowerBi, Tableau, 
+#### Technical Skills: Python, SQL, PowerBi, Tableau, Microsoft Excel 
