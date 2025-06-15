@@ -11,6 +11,15 @@
 [![LinkedIn Logo](images/linkedin_logo.png)](https://www.linkedin.com/in/sriks023)
 
 ---
+
+**Connect with me:**
+
+* 🐙 [GitHub](https://github.com/yourusername)
+* 🔗 [LinkedIn](https://www.linkedin.com/in/yourprofile)
+
+---
+
+---
 ---
 sriks023.github.io/portfolio 
 
