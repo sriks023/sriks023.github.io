@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRIDHAR K S | Case Studies</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html">SRIDHAR K S</a></h1>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li class="current-page-link"><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header fade-in">
+            <div class="container text-center">
+                <h2 class="animate-slide-up">My Case Studies</h2>
+                <p class="animate-slide-up">Explore my in-depth analysis and solutions for real-world business and technical challenges.</p>
+                <a href="index.html" class="btn secondary animate-slide-up">← Back to Main Portfolio</a>
+            </div>
+        </section>
+
+        <section class="content-list-section fade-in">
+            <div class="container">
+                <div class="content-grid">
+                    <!-- Example Case Study Item -->
+                    <div class="content-item animate-slide-up">
+                        <div class="content-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                        </div>
+                        <h3>Optimizing Sales Funnel for a B2C Product</h3>
+                        <p>Project Date: Q1 2024</p>
+                        <a href="assets/case-studies/sales_funnel_case_study.pdf" download="sales_funnel_case_study.pdf" class="btn tertiary small-btn">View Case Study (PDF)</a>
+                    </div>
+                    <!-- Add more case study items here -->
+                    <div class="content-item animate-slide-up">
+                        <div class="content-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                        </div>
+                        <h3>Implementing Secure Authentication for Web Apps</h3>
+                        <p>Project Date: 2018 (BCA Final Year)</p>
+                        <a href="assets/case-studies/secure_auth_case_study.pdf" download="secure_auth_case_study.pdf" class="btn tertiary small-btn">View Case Study (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year-page"></span> SRIDHAR K S. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('current-year-page').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
