@@ -1,0 +1,28 @@
+    [
+        {
+            "title": "Certified Digital Marketing Professional",
+            "issuer": "Institution/Platform",
+            "year": "2023",
+            "pdfPath": "assets/certifications/digital_marketing_cert.pdf"
+        },
+        {
+            "title": "Advanced Python for Data Science",
+            "issuer": "Institution/Platform",
+            "year": "2024",
+            "pdfPath": "assets/certifications/python_data_science_cert.pdf"
+        },
+        {
+            "title": "Google Project Management Professional Certificate",
+            "issuer": "Coursera",
+            "year": "2023",
+            "pdfPath": "assets/certifications/google_pm_cert.pdf"
+        }
+        ,
+        {
+            "title": "Your New Certification Title",
+            "issuer": "New Issuer",
+            "year": "2025",
+            "pdfPath": "assets/certifications/your_new_cert.pdf"
+        }
+    ]
+    
