@@ -23,15 +23,14 @@
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#certifications">Certifications</a></li> <!-- New Link -->
-                    <li><a href="#blogs">Blogs</a></li> <!-- New Link -->
-                    <li><a href="#case-studies">Case Studies</a></li> <!-- New Link -->
+                    <li><a href="certifications.html">Certifications</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="menu-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <!-- 3-Dot (Vertical Ellipsis) Icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
                 </div>
             </nav>
         </div>
@@ -43,10 +42,16 @@
                 <div class="hero-content">
                     <div class="profile-picture animate-slide-up">
                         <!-- IMPORTANT: Replace 'images/profile.jpg' with the actual path to YOUR profile picture. -->
-                        <img src="images/sridhar-profile.jpg" alt="SRIDHAR K S Profile Picture">
+                        <img src="images/profile.jpg" alt="SRIDHAR K S Profile Picture">
                     </div>
                     <h2 class="animate-fade-in">Hello, I'm SRIDHAR K S</h2>
-                    <p class="animate-fade-in-delay">Tech-savvy professional with BCA and MBA education. • 1 year of experience in direct sales and marketing, driving revenue growth and customer acquisition. • Certified Yoga Practitioner. • Looking for a leadership role that applies my analytical skills, and business knowledge to drive growth, customer engagement, and brand development.</p>
+                    <p class="hero-subtitle animate-fade-in-delay">Analytics & Management Student</p> <!-- New Sub-line -->
+                    <ul class="intro-bullets animate-fade-in-delay"> <!-- Bio as Bulletins -->
+                        <li>Tech-savvy professional with BCA and MBA education.</li>
+                        <li>1 year of experience in direct sales and marketing, driving revenue growth and customer acquisition.</li>
+                        <li>Certified Yoga Practitioner.</li>
+                        <li>Looking for a leadership role that applies my analytical skills, and business knowledge to drive growth, customer engagement, and brand development.</li>
+                    </ul>
                     <div class="cta-buttons animate-fade-in-delay">
                         <a href="#portfolio" class="btn primary">View Portfolio</a>
                         <a href="#about" class="btn secondary">Learn More About Me</a>
@@ -61,27 +66,43 @@
                 <h2 class="animate-slide-up">About Me</h2>
                 <p class="animate-slide-up">As a tech-savvy professional holding degrees in BCA and MBA, I bring a unique blend of technical understanding and business acumen. My one year in direct sales and marketing has honed my ability to drive revenue growth and secure customer acquisition. Beyond the corporate realm, I am a certified Yoga Practitioner, reflecting my holistic approach to well-being and personal development. I am actively seeking a leadership role where I can leverage my strong analytical skills and comprehensive business knowledge to foster sustainable growth, enhance customer engagement, and build strong brand identity.</p>
 
-                <h3 class="animate-slide-up">Educational Background</h3>
-                <ul class="animate-slide-up">
-                    <li><strong>Master of Business Administration</strong>, RNSIT College (present) | Bengaluru, 72% (1st Year)</li>
-                    <li><strong>Bachelor of Computer Application</strong>, SRNMN College (2018) | Shivamogga, 51%</li>
-                    <li><strong>PUC</strong>, AVS Science PU College (2015) | Bhadravathi, 54%</li>
-                    <li><strong>SSLC</strong>, AVS SCHOOL (2012) | Bhadravathi, 63%</li>
-                </ul>
+                <div class="education-experience-container">
+                    <h3 class="animate-slide-up">Educational Background</h3>
+                    <div class="education-list">
+                        <div class="edu-exp-item animate-slide-up">
+                            <h4>Master of Business Administration</h4>
+                            <p>RNSIT College | Bengaluru <span class="date">(Present - 72% 1st Year)</span></p>
+                        </div>
+                        <div class="edu-exp-item animate-slide-up">
+                            <h4>Bachelor of Computer Application</h4>
+                            <p>SRNMN College | Shivamogga <span class="date">(2018 - 51%)</span></p>
+                        </div>
+                        <div class="edu-exp-item animate-slide-up">
+                            <h4>PUC</h4>
+                            <p>AVS Science PU College | Bhadravathi <span class="date">(2015 - 54%)</span></p>
+                        </div>
+                        <div class="edu-exp-item animate-slide-up">
+                            <h4>SSLC</h4>
+                            <p>AVS SCHOOL | Bhadravathi <span class="date">(2012 - 63%)</span></p>
+                        </div>
+                    </div>
 
-                <h3 class="animate-slide-up">Work Experience</h3>
-                <ul class="animate-slide-up">
-                    <li>
-                        <strong>Supervisor</strong>, Modicare Limited (2023) | SHIVAMOGGA
-                        <ul>
-                            <li>Spearheaded a team of 10+ direct sales consultants.</li>
-                            <li>Effectively presenting product benefits and building customer loyalty.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Technical Assistant</strong>, Anu Garments (2022) | Bhadravathi
-                    </li>
-                </ul>
+                    <h3 class="animate-slide-up">Work Experience</h3>
+                    <div class="experience-list">
+                        <div class="edu-exp-item animate-slide-up">
+                            <h4>Supervisor, Modicare Limited</h4>
+                            <p>SHIVAMOGGA <span class="date">(2023)</span></p>
+                            <ul>
+                                <li>Spearheaded a team of 10+ direct sales consultants.</li>
+                                <li>Effectively presenting product benefits and building customer loyalty.</li>
+                            </ul>
+                        </div>
+                        <div class="edu-exp-item animate-slide-up">
+                            <h4>Technical Assistant, Anu Garments</h4>
+                            <p>Bhadravathi <span class="date">(2022)</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -91,33 +112,32 @@
                 <div class="project-grid">
                     <div class="project-item animate-slide-up">
                         <div class="project-icon">
-                            <!-- Project Icon (e.g., Document/Research) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <!-- Project Icon: Book / Document -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                         </div>
                         <h3>Sustainable Practices in Handloom Weaving Industry</h3>
                         <p>Research paper (2025)</p>
-                        <!-- Add more details or a link if available -->
                     </div>
                     <div class="project-item animate-slide-up">
                         <div class="project-icon">
-                            <!-- Project Icon (e.g., Data Analysis) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 20h9"></path><path d="M16.5 15.5L12 20L7.5 15.5"></path><path d="M11 10V2h2v8h-2z"></path></svg>
+                            <!-- Project Icon: Search / Analysis -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                         </div>
                         <h3>Deloitte Data Analysis Forensic Technology</h3>
                         <p>Job Simulation (2025)</p>
                     </div>
                     <div class="project-item animate-slide-up">
                         <div class="project-icon">
-                            <!-- Project Icon (e.g., Security/Crime) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><circle cx="12" cy="11" r="1"></circle><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M10 17l-1-1 3-3"></path></svg>
+                            <!-- Project Icon: Shield / Security -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                         </div>
                         <h3>Digital Crime in Business World</h3>
                         <p>Societal Project - MBA (2024)</p>
                     </div>
                     <div class="project-item animate-slide-up">
                         <div class="project-icon">
-                            <!-- Project Icon (e.g., Website/Security) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M10 20l4-16m-2 2h4m-4 4h4m-4 4h4m-4 4h4"></path><path d="M18 20V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2z"></path></svg>
+                            <!-- Project Icon: Laptop / Web -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="7" x2="22" y2="7"></line><line x1="12" y1="17" x2="12" y2="21"></line><line x1="8" y1="21" x2="16" y2="21"></line></svg>
                         </div>
                         <h3>Apartment Security Maintenance Website</h3>
                         <p>Final Year Project - BCA (2018)</p>
@@ -132,24 +152,24 @@
                 <div class="service-list">
                     <div class="service-item animate-slide-up">
                         <div class="service-icon">
-                            <!-- Service Icon (e.g., Data Storytelling) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 20h9"></path><path d="M16.5 15.5L12 20L7.5 15.5"></path><path d="M11 10V2h2v8h-2z"></path></svg>
+                            <!-- Service Icon: Bar Chart (Data Storytelling) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                         </div>
                         <h3>Data Storytelling</h3>
                         <p>Transforming complex data into compelling narratives for informed decision-making.</p>
                     </div>
                     <div class="service-item animate-slide-up">
                         <div class="service-icon">
-                            <!-- Service Icon (e.g., Project Management) -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                            <!-- Service Icon: Checklist / Clipboard (Project Management) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><line x1="12" y1="18" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="12"></line></svg>
                         </div>
                         <h3>Project Management</h3>
                         <p>Leading and overseeing projects from initiation to completion, ensuring timely delivery and successful outcomes.</p>
                     </div>
                     <div class="service-item animate-slide-up">
                         <div class="service-icon">
-                            <!-- Service Icon (Yoga & Wellness) - Modernized -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><circle cx="12" cy="7" r="2"></circle><path d="M12 10v6l-3-1.5"></path><path d="M12 10v6l3-1.5"></path></svg>
+                            <!-- Service Icon: Lotus (Yoga & Wellness) - More modern and symbolic -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.62 13.96c.71 0 1.28.57 1.28 1.28s-.57 1.28-1.28 1.28h-.62c-1.1 0-2 .9-2 2v2a.5.5 0 0 0 1 0v-2c0-.55.45-1 1-1h.62c.71 0 1.28-.57 1.28-1.28s-.57-1.28-1.28-1.28h-1.62c-1.1 0-2 .9-2 2v2a.5.5 0 0 0 1 0v-2c0-.55.45-1 1-1h.62c.71 0 1.28-.57 1.28-1.28s-.57-1.28-1.28-1.28z"></path><path d="M12 2a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path><path d="M18.8 9.53c-2.3-2.3-6.1-2.3-8.4 0L6.46 7.27a.5.5 0 0 0-.7-.01l-.7.71a.5.5 0 0 0 .01.7l3.94 3.94c.39.39 1.02.39 1.41 0l3.94-3.94a.5.5 0 0 0 .01-.7l-.7-.71a.5.5 0 0 0-.7.01z"></path><path d="M5.12 14.88c2.3 2.3 6.1 2.3 8.4 0L17.54 17.13a.5.5 0 0 0 .7.01l.7-.71a.5.5 0 0 0-.01-.7l-3.94-3.94c-.39-.39-1.02-.39-1.41 0l-3.94 3.94a.5.5 0 0 0-.01.7l.7.71a.5.5 0 0 0 .7-.01z"></path></svg>
                         </div>
                         <h3>Yoga Instruction and Wellness Coaching</h3>
                         <p>Guiding individuals towards holistic well-being through personalized yoga sessions and wellness strategies.</p>
@@ -164,8 +184,8 @@
                 <div class="skills-grid">
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- Python Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M7 12l2 2 4-4"></path></svg>
+                            <!-- Skill Icon: Code -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                         </div>
                         <h3>Python</h3>
                         <ul>
@@ -175,8 +195,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- Data Visualization Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M3 12h18"></path><path d="M16 16l-4-4-4 4"></path><path d="M12 2V12"></path></svg>
+                            <!-- Skill Icon: Trending Up (Data Viz) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
                         </div>
                         <h3>Data Visualization</h3>
                         <ul>
@@ -186,8 +206,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- Marketing Strategy Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 2l-5 5 5 5 5-5-5-5z"></path><path d="M12 10l-5 5 5 5 5-5-5-5z"></path></svg>
+                            <!-- Skill Icon: Target (Marketing Strategy) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
                         </div>
                         <h3>Marketing Strategy</h3>
                         <ul>
@@ -198,8 +218,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- MS Excel Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M3 10h18"></path><path d="M12 2v10"></path><path d="M10 6h4"></path><path d="M14 20h-4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"></path></svg>
+                            <!-- Skill Icon: Table (MS Excel) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m0 6v4a2 2 0 0 0 2 2h4m6-16h4a2 2 0 0 1 2 2v4m0 6v4a2 2 0 0 1-2 2h-4"></path></svg>
                         </div>
                         <h3>MS Excel</h3>
                         <ul>
@@ -211,8 +231,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- C Programming Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                            <!-- Skill Icon: Code (C Programming) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                         </div>
                         <h3>C Programming</h3>
                         <ul>
@@ -222,8 +242,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- MS Office Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><circle cx="12" cy="12" r="4"></circle></svg>
+                            <!-- Skill Icon: Monitor (MS Office) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                         </div>
                         <h3>MS-Office</h3>
                         <ul>
@@ -233,8 +253,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- Wellness Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M12 14c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path></svg>
+                            <!-- Skill Icon: Feather (Holistic Health and Wellness) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24l-8.48 8.49a2 2 0 0 1-2.83 0L1.76 13.29a2 2 0 0 1 0-2.83l8.48-8.49a2 2 0 0 1 2.83 0l8.48 8.49a2 2 0 0 1 0 2.83z"></path><line x1="7" y1="7" x2="17" y2="17"></line></svg>
                         </div>
                         <h3>Holistic Health and Wellness</h3>
                         <ul>
@@ -245,8 +265,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- Data-Driven Decision-Making Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M12 20h9"></path><path d="M16.5 15.5L12 20L7.5 15.5"></path><path d="M11 10V2h2v8h-2z"></path></svg>
+                            <!-- Skill Icon: Activity / Analytics -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                         </div>
                         <h3>Data-Driven Decision-Making</h3>
                         <ul>
@@ -255,8 +275,8 @@
                     </div>
                     <div class="skill-category animate-slide-up">
                         <div class="skill-icon">
-                            <!-- Project Management Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-icon"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>
+                            <!-- Skill Icon: Layout (Project Management) -->
+                            <svg class="feather-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
                         </div>
                         <h3>Project Management</h3>
                         <ul>
@@ -266,6 +286,14 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="resume" class="resume-section fade-in">
+            <div class="container text-center">
+                <h2 class="animate-slide-up">My Resume</h2>
+                <p class="animate-slide-up">Download my detailed resume to learn more about my qualifications and experience.</p>
+                <a href="assets/SRIDHAR_K_S_Resume.pdf" download="SRIDHAR_K_S_Resume.pdf" class="btn tertiary animate-slide-up">Download Resume (PDF)</a>
             </div>
         </section>
 
@@ -303,16 +331,16 @@
                     <p><strong>Email:</strong> <a href="mailto:sridks023@gmail.com">sridks023@gmail.com</a></p>
                     <div class="social-links">
                         <a href="https://x.com/sriks023" target="_blank" aria-label="X (formerly Twitter)">
-                            <!-- X (Twitter) Icon SVG - Modern, clean -->
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.901 1.153h3.684l-8.042 9.176 10.428 12.327-14.821.082L.76 1.153h4.324l6.577 8.91 3.54-4.808zm-2.072 17.198h2.898l-7.5-9.172-2.909 3.093z"/></svg>
+                            <!-- X (Twitter) Icon SVG -->
+                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c11 3 21-8 21-19.5a4.48 4.48 0 0 0-.08-2.02Z"></path></svg>
                         </a>
                         <a href="https://github.com/sriks023" target="_blank" aria-label="GitHub">
-                            <!-- GitHub Icon SVG - Modern, clean -->
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.819-.258.819-.579 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.542-1.373-1.322-1.745-1.322-1.745-1.087-.744.084-.73.084-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.49.998.108-.77.42-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.31.465-2.381 1.235-3.221-.124-.303-.535-1.524.117-3.176 0 0 1-.322 3.298 1.232 0 0 1.026-.285 2.05-.289 1.023.004 2.05.289 2.05.289 2.297-1.554 3.297-1.232 3.297-1.232.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.922.43.372.823 1.102.823 2.222v3.293c0 .321.218.694.825.578C20.565 21.802 24 17.301 24 12c0-6.627-5.372-12-12-12z"/></svg>
+                            <!-- GitHub Icon SVG -->
+                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3c0 0-1.03-.35-3.41 1.05A10.27 10.27 0 0 0 12 5.67a10.27 10.27 0 0 0-3.39-1.31c-2.38-1.4-3.41-1.05-3.41-1.05A5.07 5.07 0 0 0 4.09 3c-.47 1.25-.79 2.51-.94 3.81A5.44 5.44 0 0 0 2 12.29c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 22.13V19Z"></path></svg>
                         </a>
                         <a href="https://www.linkedin.com/in/sriks023" target="_blank" aria-label="LinkedIn">
-                            <!-- LinkedIn Icon SVG - Modern, clean -->
-                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.461 4.298h4.721v14.07h-4.721zM2.821 2.152c-1.555 0-2.821-1.265-2.821-2.821s1.266-2.821 2.821-2.821 2.821 1.265 2.821 2.821-1.266 2.821-2.821 2.821zm10.743 7.828c0-2.392.01-4.783 0-7.175h-4.021v7.175h4.021v-7.175c0-1.127-.145-2.148-.592-2.738-.724-.961-1.926-1.503-3.619-1.503-1.696 0-3.084.667-3.619 1.503-.447.59-.592 1.611-.592 2.738v7.175h-4.021v-7.175h4.021v1.892c.501-.582 1.17-1.054 1.89-1.393 1.157-.552 2.656-.632 3.905-.231 1.246.4 2.253 1.341 2.766 2.502.515 1.164.675 2.473.675 3.792v3.205h4.721v-8.243z"/></svg>
+                            <!-- LinkedIn Icon SVG -->
+                            <svg class="social-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
                     </div>
                 </div>
