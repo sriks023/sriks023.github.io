@@ -4,16 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-    /* Color Palette (Modern & Professional - Slightly refined) */
-    --primary-bg: #121212;       /* Deeper dark background */
-    --secondary-bg: #1E1E1E;     /* Slightly lighter dark for cards/sections */
-    --text-color: #E0E0E0;       /* Lighter text for contrast */
-    --light-text-color: #B0B0B0; /* For secondary text */
-    --accent-color: #00BFFF;     /* A vibrant deep sky blue accent */
-    --accent-light: #4DD0FF;     /* Lighter shade of accent */
-    --border-color: #333333;     /* Subtle border for separation */
-    --hover-color: #0099CC;      /* Darker accent for hover */
-    --shadow-color: rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+    /* New Color Palette (Vibrant & Professional) */
+    --primary-bg: #1A202C;       /* Deep Slate Blue-Gray */
+    --secondary-bg: #2D3748;     /* Slightly lighter Slate Gray for cards/sections */
+    --text-color: #E2E8F0;       /* Soft White for primary text */
+    --light-text-color: #A0AEC0; /* Light Gray for secondary text */
+    --accent-color-1: #00BCD4;   /* Vibrant Cyan/Teal (Primary Accent) */
+    --accent-color-2: #FFC107;   /* Warm Amber/Gold (Secondary Accent) */
+    --accent-color-3: #9C27B0;   /* Deep Purple (Tertiary Accent) */
+    --border-color: #4A5568;     /* Darker subtle border */
+    --hover-color-1: #00A3B7;    /* Darker Cyan for hover */
+    --hover-color-2: #FFA000;    /* Darker Amber for hover */
+    --hover-color-3: #7B1FA2;    /* Darker Purple for hover */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Soft shadow */
 
     /* Typography */
     --font-family-primary: 'Inter', sans-serif;
@@ -55,13 +58,13 @@ body {
 }
 
 a {
-    color: var(--accent-color);
+    color: var(--accent-color-1);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--accent-light);
+    color: var(--accent-color-2);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -96,28 +99,40 @@ ul {
 }
 
 .btn.primary {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-1);
     color: var(--primary-bg);
 }
 
 .btn.primary:hover {
-    background-color: var(--hover-color);
+    background-color: var(--hover-color-1);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px var(--shadow-color);
 }
 
 .btn.secondary {
     background-color: transparent;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
+    color: var(--accent-color-1);
+    border: 2px solid var(--accent-color-1);
 }
 
 .btn.secondary:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-1);
     color: var(--primary-bg);
     transform: translateY(-2px);
     box-shadow: 0 6px 15px var(--shadow-color);
 }
+
+.btn.tertiary { /* New button style for resume */
+    background-color: var(--accent-color-2);
+    color: var(--primary-bg);
+}
+
+.btn.tertiary:hover {
+    background-color: var(--hover-color-2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--shadow-color);
+}
+
 
 /* --- Header & Navigation --- */
 header {
@@ -147,7 +162,7 @@ header .container {
     margin: 0;
     font-weight: 700;
     letter-spacing: 1px;
-    color: var(--accent-light);
+    color: var(--accent-color-1);
 }
 
 .main-nav {
@@ -173,7 +188,7 @@ header .container {
     position: absolute;
     width: 0;
     height: 3px; /* Thicker underline */
-    background: var(--accent-color);
+    background: var(--accent-color-1);
     left: 50%; /* Start from center */
     transform: translateX(-50%); /* Center it */
     bottom: 0;
@@ -187,7 +202,7 @@ header .container {
 
 .nav-menu li a:hover,
 .nav-menu li a.active {
-    color: var(--accent-light);
+    color: var(--accent-color-2);
 }
 
 /* Hamburger Menu Toggle */
@@ -234,7 +249,8 @@ section:last-of-type {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    /* A more complex gradient for background */
+    background: linear-gradient(135deg, var(--primary-bg) 0%, #171E2B 50%, #1A2535 100%);
     min-height: 90vh; /* Make it taller */
     display: flex;
     align-items: center;
@@ -244,16 +260,18 @@ section:last-of-type {
     overflow: hidden;
 }
 
-.hero::before { /* Subtle overlay for image */
+.hero::before { /* Subtle overlay for visual interest */
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(0, 191, 255, 0.1), rgba(128, 0, 128, 0.1));
+    background: radial-gradient(circle at top left, rgba(0, 188, 212, 0.1), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(255, 193, 7, 0.1), transparent 50%);
     z-index: 1;
 }
+
 
 .hero-content {
     position: relative;
@@ -269,8 +287,8 @@ section:last-of-type {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid var(--accent-color);
-    box-shadow: 0 0 25px rgba(0, 191, 255, 0.4); /* Accent glow */
+    border: 4px solid var(--accent-color-1);
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.6), 0 0 40px rgba(255, 193, 7, 0.3); /* Accent glow with secondary color */
 }
 
 .hero-content h2 {
@@ -278,7 +296,7 @@ section:last-of-type {
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
     text-align: center;
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.3); /* Subtle text glow */
+    text-shadow: 0 0 15px rgba(0, 188, 212, 0.4); /* Subtle text glow */
 }
 
 .hero-content p {
@@ -292,11 +310,13 @@ section:last-of-type {
 .cta-buttons {
     display: flex;
     gap: var(--spacing-md);
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
 }
 
 /* --- About Section --- */
 .about-section ul {
-    list-style: none; /* Reset this, use custom bullet */
+    list-style: none;
     padding-left: 0;
     margin-bottom: var(--spacing-md);
 }
@@ -305,13 +325,13 @@ section:last-of-type {
     margin-bottom: var(--spacing-xs);
     font-size: var(--font-size-base);
     position: relative;
-    padding-left: var(--spacing-md); /* Space for custom bullet */
+    padding-left: var(--spacing-md);
     color: var(--light-text-color);
 }
 
 .about-section ul li::before {
-    content: '→'; /* Custom bullet point */
-    color: var(--accent-color);
+    content: '→';
+    color: var(--accent-color-1);
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -323,7 +343,8 @@ section:last-of-type {
     text-align: left;
     border-bottom: 2px solid var(--border-color);
     padding-bottom: var(--spacing-xs);
-    display: inline-block; /* To make border only under text */
+    display: inline-block;
+    color: var(--accent-color-1); /* Section sub-heading accent */
 }
 
 
@@ -343,48 +364,37 @@ section:last-of-type {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align content to the left */
+    align-items: flex-start;
 }
 
 .project-item:hover, .service-item:hover, .skill-category:hover {
-    transform: translateY(-8px); /* More pronounced lift */
-    box-shadow: 0 15px 30px var(--shadow-color), 0 0 20px rgba(0, 191, 255, 0.2); /* Deeper shadow + glow */
-    border-color: var(--accent-color); /* Border highlight */
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px var(--shadow-color), 0 0 20px rgba(0, 188, 212, 0.3); /* Deeper shadow + glow with accent 1 */
+    border-color: var(--accent-color-1); /* Border highlight */
 }
 
-/* Icon Styling for Cards */
+/* Icon Styling for Cards (Emojis) */
 .project-icon, .service-icon, .skill-icon {
-    font-size: 2.5rem; /* Larger emoji/icon size */
+    font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--accent-light); /* Color for emojis/icons */
-    width: 60px; /* Fixed size for icons */
+    color: var(--accent-color-2); /* Use accent 2 for emojis */
+    width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 191, 255, 0.1); /* Subtle background */
-    border-radius: 50%; /* Circular background */
-    border: 1px solid var(--accent-color);
-    flex-shrink: 0; /* Prevent shrinking */
+    background-color: rgba(255, 193, 7, 0.1); /* Subtle background with accent 2 */
+    border-radius: 50%;
+    border: 1px solid var(--accent-color-2);
+    flex-shrink: 0;
 }
-
-.project-icon img, .service-icon img, .skill-icon img, .social-icon {
-    max-width: 100%; /* Ensure images scale */
-    height: auto;
-    filter: invert(100%) brightness(1.5) sepia(100%) hue-rotate(180deg) saturate(200%); /* Example filter for SVG icons to match theme */
-    transition: filter 0.3s ease;
-}
-.social-icon:hover {
-    filter: invert(70%) brightness(1.5) sepia(100%) hue-rotate(180deg) saturate(300%);
-}
-
 
 /* Portfolio Section Grid */
 .project-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 .project-item h3 {
-    color: var(--accent-light);
+    color: var(--accent-color-1); /* Accent 1 for project titles */
     margin-bottom: var(--spacing-xs);
 }
 .project-item p {
@@ -396,7 +406,7 @@ section:last-of-type {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 .service-item h3 {
-    color: var(--accent-light);
+    color: var(--accent-color-1); /* Accent 1 for service titles */
     margin-bottom: var(--spacing-xs);
 }
 .service-item p {
@@ -409,7 +419,7 @@ section:last-of-type {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 .skill-category h3 {
-    color: var(--accent-light);
+    color: var(--accent-color-1); /* Accent 1 for skill categories */
     margin-bottom: var(--spacing-sm);
     border-bottom: 1px solid var(--border-color);
     padding-bottom: var(--spacing-xs);
@@ -428,12 +438,20 @@ section:last-of-type {
 }
 .skill-category ul li::before {
     content: '•';
-    color: var(--accent-color);
+    color: var(--accent-color-2); /* Accent 2 for list bullets */
     margin-right: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
+/* --- Resume Section (New) --- */
+.resume-section {
+    text-align: center;
+}
+.resume-section p {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+}
 
 /* --- Contact Section --- */
 .contact-section {
@@ -455,26 +473,33 @@ section:last-of-type {
 }
 
 .social-links a {
-    width: 40px; /* Size for social icons */
-    height: 40px;
+    width: 45px; /* Slightly larger social icons */
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: var(--secondary-bg);
     border: 1px solid var(--border-color);
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color-1);
     transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+    border-color: var(--accent-color-1);
 }
 
-.social-links a img {
-    width: 24px; /* Size of the SVG icon inside the circle */
-    height: 24px;
+.social-links .social-svg {
+    width: 28px; /* Size of the SVG icon inside the circle */
+    height: 28px;
+    fill: var(--text-color); /* Fill color for inline SVGs */
+    transition: fill 0.3s ease;
+}
+
+.social-links a:hover .social-svg {
+    fill: var(--primary-bg); /* Change SVG color on hover */
 }
 
 
@@ -512,8 +537,8 @@ section:last-of-type {
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+    border-color: var(--accent-color-1);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
 }
 
 .contact-form textarea {
