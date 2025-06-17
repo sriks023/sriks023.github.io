@@ -4,31 +4,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
 :root {
-    /* New Color Palette (Light, Modern, Multi-Color) */
-    --primary-bg: #F8F8FA;       /* Very light background */
-    --secondary-bg: #FFFFFF;     /* Pure White for cards/sections */
-    --text-color: #263238;       /* Dark charcoal for primary text */
-    --light-text-color: #546E7A; /* Muted gray for secondary text/paragraphs */
+    /* NEW Dark Mode Color Palette (Deep Blue/Navy) */
+    --primary-bg: #1A2535;       /* Deep Navy Blue for main background */
+    --secondary-bg: #2D3E50;     /* Slightly lighter Navy for cards/sections/header */
+    --text-color: #E0E6EE;       /* Soft White/Light Gray for primary text */
+    --light-text-color: #AAB6C3; /* Muted light gray for secondary text/paragraphs */
 
-    --accent-blue: #2196F3;      /* Primary Accent: Vibrant Blue */
-    --accent-green: #4CAF50;     /* Secondary Accent: Green */
-    --accent-orange: #FF9800;    /* Tertiary Accent: Orange */
-    --accent-purple: #9C27B0;    /* Quaternary Accent: Purple */
+    --accent-main: #4FC3F7;      /* Primary Accent: Lighter, brighter Sky Blue */
+    --accent-secondary: #FFCA28; /* Secondary Accent: Brighter Yellow-Orange */
+    --accent-tertiary: #BA68C8;  /* Tertiary Accent: Lighter, brighter Purple */
+    --accent-complement: #81C784;/* Complementary Accent: Lighter, brighter Green */
 
-    --border-color: #ECEFF1;     /* Light border for subtle separation */
-    --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter, softer shadow */
-    --shadow-medium: rgba(0, 0, 0, 0.12); /* Slightly stronger hover shadow */
+    --border-color: #3B4A5D;     /* Darker subtle border */
+    --shadow-dark: rgba(0, 0, 0, 0.4); /* Stronger shadow for dark mode */
+    --shadow-accent-light: rgba(79, 195, 247, 0.3); /* Accent shadow for glow */
 
     /* Typography */
     --font-family-primary: 'Inter', sans-serif;
-    --font-size-base: 1.05rem; /* Slightly smaller base font */
+    --font-size-base: 1.05rem; /* 16.8px */
     --line-height-base: 1.6;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
-    --spacing-lg: 3.5rem; /* Slightly less for tighter modern feel */
+    --spacing-lg: 3.5rem;
     --spacing-xl: 5rem;
     --border-radius: 16px; /* Larger radius for a softer, modern look */
 }
@@ -47,25 +47,25 @@ body {
     font-family: var(--font-family-primary);
     line-height: var(--line-height-base);
     color: var(--text-color);
-    background-color: #f0f0f0; /* Change to a different shade */
+    background-color: var(--primary-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 1100px; /* Slightly narrower for focus */
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
 
 a {
-    color: var(--accent-blue);
+    color: var(--accent-main);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: var(--accent-orange);
+    color: var(--accent-secondary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -88,7 +88,7 @@ ul {
 /* --- Buttons --- */
 .btn {
     display: inline-block;
-    padding: var(--spacing-sm) 1.75rem; /* More horizontal padding */
+    padding: var(--spacing-sm) 1.75rem;
     border-radius: var(--border-radius);
     text-align: center;
     font-weight: 600;
@@ -96,54 +96,55 @@ ul {
     border: none;
     cursor: pointer;
     font-size: var(--font-size-base);
-    box-shadow: 0 4px 8px var(--shadow-light);
+    box-shadow: 0 4px 8px var(--shadow-dark); /* Deeper shadow for dark mode */
 }
 
-.btn.primary {
-    background-color: var(--accent-blue);
-    color: var(--secondary-bg); /* Text color contrast */
+/* All hero buttons unified to same color */
+.btn.primary, .btn.secondary, .btn.tertiary {
+    background-color: var(--accent-main); /* All use the primary accent color */
+    color: var(--primary-bg); /* Text color contrast against dark primary bg */
+    border: none; /* Ensure no border from .secondary */
 }
 
-.btn.primary:hover {
-    background-color: var(--accent-green); /* Hover with secondary accent */
+.btn.primary:hover, .btn.secondary:hover, .btn.tertiary:hover {
+    background-color: var(--accent-secondary); /* Hover with secondary accent */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--shadow-medium);
+    box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
+/* Specific styling for the 'Back to Main Portfolio' button on sub-pages
+   to differentiate it slightly while keeping theme */
 .btn.secondary {
     background-color: transparent;
-    color: var(--accent-blue);
-    border: 2px solid var(--accent-blue);
+    color: var(--accent-main);
+    border: 2px solid var(--accent-main);
 }
-
 .btn.secondary:hover {
-    background-color: var(--accent-blue);
-    color: var(--secondary-bg);
+    background-color: var(--accent-main);
+    color: var(--primary-bg);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--shadow-medium);
+    box-shadow: 0 6px 12px var(--shadow-dark);
 }
 
-.btn.tertiary { /* Resume button */
-    background-color: var(--accent-orange); /* Tertiary accent */
-    color: var(--secondary-bg);
-}
 
-.btn.tertiary:hover {
-    background-color: var(--accent-purple); /* Quaternary accent on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--shadow-medium);
-}
-
-/* For smaller buttons on sub-pages */
+/* For smaller buttons on sub-pages (Download Certificate/Blog/Case Study) */
 .btn.small-btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
     border-radius: 10px;
+    background-color: var(--accent-main); /* Use main accent for these too */
+    color: var(--primary-bg);
 }
+.btn.small-btn:hover {
+    background-color: var(--accent-secondary); /* Hover with secondary accent */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-dark);
+}
+
 
 /* --- Header & Navigation --- */
 header {
-    background-color: var(--secondary-bg); /* Header is white/light */
+    background-color: var(--secondary-bg); /* Header matches card background */
     padding: var(--spacing-sm) 0;
     position: sticky;
     top: 0;
@@ -151,12 +152,12 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 10px var(--shadow-light); /* Initial shadow */
+    box-shadow: 0 2px 10px var(--shadow-dark); /* Initial shadow */
     transition: box-shadow 0.3s ease;
 }
 
 header.sticky {
-    box-shadow: 0 5px 20px var(--shadow-medium);
+    box-shadow: 0 5px 20px var(--shadow-dark);
 }
 
 header .container {
@@ -169,15 +170,15 @@ header .container {
     font-size: 2.2rem;
     margin: 0;
     font-weight: 800;
-    letter-spacing: -0.5px; /* Tighter letter spacing */
-    color: var(--accent-blue);
+    letter-spacing: -0.5px;
+    color: var(--accent-main); /* Logo text is accent color */
 }
 
-.logo h1 a { /* Style for logo link if it's wrapping h1 */
-    color: var(--accent-blue);
+.logo h1 a {
+    color: var(--accent-main);
 }
 .logo h1 a:hover {
-    color: var(--accent-orange);
+    color: var(--accent-secondary);
 }
 
 .main-nav {
@@ -185,6 +186,7 @@ header .container {
     align-items: center;
 }
 
+/* Desktop navigation links - always visible */
 .nav-menu {
     display: flex;
     gap: var(--spacing-md);
@@ -192,7 +194,7 @@ header .container {
 
 .nav-menu li a {
     font-weight: 600;
-    color: var(--text-color); /* Dark text on light header */
+    color: var(--text-color); /* Light text on dark header */
     position: relative;
     padding-bottom: 8px;
     transition: color 0.3s ease;
@@ -203,32 +205,33 @@ header .container {
     position: absolute;
     width: 0;
     height: 3px;
-    background: var(--accent-blue);
+    background: var(--accent-main);
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth curve */
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .nav-menu li a:hover::after,
 .nav-menu li a.active::after,
-.nav-menu li.current-page-link a::after { /* Active state for current page */
+.nav-menu li.current-page-link a::after {
     width: 100%;
 }
 
 .nav-menu li a:hover,
 .nav-menu li a.active,
-.nav-menu li.current-page-link a { /* Active state for current page */
-    color: var(--accent-orange);
+.nav-menu li.current-page-link a {
+    color: var(--accent-main); /* Highlight active/hovered link with main accent */
 }
 
-/* Hamburger Menu Toggle (3-dot icon) */
+
+/* Hamburger Menu Toggle (3-dot icon) - HIDDEN ON DESKTOP */
 .menu-toggle {
-    display: none; /* Hidden by default on desktop */
+    display: none; /* Hide on desktop by default */
     width: 30px;
     height: 30px;
     cursor: pointer;
-    z-index: 1001; /* Ensure it's above nav on mobile */
+    z-index: 1001;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease;
@@ -237,7 +240,7 @@ header .container {
     transform: scale(1.1);
 }
 
-.menu-toggle .feather-icon { /* Style for the SVG icon */
+.menu-toggle .feather-icon {
     width: 28px;
     height: 28px;
     stroke: var(--text-color); /* Icon color */
@@ -245,8 +248,8 @@ header .container {
 }
 
 .menu-toggle.open .feather-icon {
-    stroke: var(--accent-blue); /* Change color when open */
-    transform: rotate(90deg); /* Rotate for a dynamic effect */
+    stroke: var(--accent-main);
+    transform: rotate(90deg);
 }
 
 
@@ -257,20 +260,22 @@ section {
     overflow: hidden;
 }
 
-section:nth-of-type(even) { /* Alternate section background for visual separation */
+/* Alternate section background for visual separation */
+section:nth-of-type(even) {
     background-color: var(--primary-bg);
 }
-section:nth-of-type(odd) { /* Alternate section background for visual separation */
-    background-color: #F8F8FA; /* Slightly lighter for contrast */
+section:nth-of-type(odd) {
+    background-color: #15202E; /* Slightly different dark shade */
 }
 section:last-of-type {
-    padding-bottom: var(--spacing-xl); /* Ensure consistent padding at bottom */
+    padding-bottom: var(--spacing-xl);
 }
 
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #F0F4F8 0%, #DCE3EB 100%); /* Soft gradient */
+    /* New: Background image with linear gradient overlay */
+    background: linear-gradient(rgba(26, 37, 53, 0.9), rgba(26, 37, 53, 0.9)), url('images/hero-cover.jpg') no-repeat center center/cover;
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -278,7 +283,7 @@ section:last-of-type {
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding-top: calc(var(--spacing-xl) + 80px); /* Adjust for header height */
+    padding-top: calc(var(--spacing-xl) + 80px);
     padding-bottom: var(--spacing-xl);
 }
 
@@ -289,10 +294,10 @@ section:last-of-type {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.08), transparent 40%), /* Blue accent */
-                radial-gradient(circle at 90% 80%, rgba(255, 152, 0, 0.08), transparent 40%); /* Orange accent */
+    background: radial-gradient(circle at 10% 20%, rgba(79, 195, 247, 0.08), transparent 40%), /* Accent blue */
+                radial-gradient(circle at 90% 80%, rgba(255, 202, 40, 0.08), transparent 40%); /* Accent yellow-orange */
     z-index: 1;
-    pointer-events: none; /* Allows clicks to pass through */
+    pointer-events: none;
 }
 
 .hero-content {
@@ -304,13 +309,13 @@ section:last-of-type {
     gap: var(--spacing-md);
 }
 
-.profile-photo {
-  width: 150px; /* Adjust size */
-  height: 150px;
-  border-radius: 50%; /* Makes it circular */
-  border: 5px solid #3498db; /* Adds a stylish border */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow */
-
+.profile-picture img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-main);
+    box-shadow: 0 0 30px var(--shadow-accent-light), 0 0 60px rgba(255, 202, 40, 0.3); /* Dual accent glow */
 }
 
 .hero-content h2 {
@@ -319,18 +324,18 @@ section:last-of-type {
     margin-bottom: var(--spacing-sm);
     text-align: center;
     color: var(--text-color);
-    text-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Soft text shadow */
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.hero-subtitle { /* New style for the sub-line */
+.hero-subtitle {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--accent-green); /* Use a different accent color */
-    margin-top: -1.5rem; /* Pull it up closer to the name */
+    color: var(--accent-complement); /* Green accent for sub-line */
+    margin-top: -1.5rem;
     margin-bottom: var(--spacing-md);
 }
 
-.intro-bullets { /* Style for the new bulleted bio */
+.intro-bullets {
     list-style: none;
     padding: 0;
     max-width: 700px;
@@ -343,14 +348,14 @@ section:last-of-type {
 
 .intro-bullets li {
     position: relative;
-    padding-left: 1.5em; /* Space for custom bullet */
+    padding-left: 1.5em;
     margin-bottom: 0.5em;
-    font-size: 1.15rem; /* Slightly smaller than main p in hero */
+    font-size: 1.15rem;
 }
 
 .intro-bullets li::before {
     content: '•';
-    color: var(--accent-blue); /* Blue bullet */
+    color: var(--accent-main); /* Main accent bullet */
     position: absolute;
     left: 0;
     font-size: 1.2em;
@@ -381,7 +386,7 @@ section:last-of-type {
 
 .about-section ul li::before {
     content: '→';
-    color: var(--accent-blue);
+    color: var(--accent-main);
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -389,21 +394,21 @@ section:last-of-type {
 }
 
 .about-section h3 {
-    margin-top: var(--spacing-lg); /* More space above sub-headings */
-    margin-bottom: var(--spacing-md); /* More space below sub-headings */
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     text-align: left;
-    border-bottom: none; /* Remove underline */
+    border-bottom: none;
     padding-bottom: 0;
     display: block;
-    color: var(--text-color); /* Main text color for h3 */
-    font-weight: 800; /* Bolder */
+    color: var(--text-color);
+    font-weight: 800;
 }
-.about-section h3::after { /* Add a small accent line below h3 */
+.about-section h3::after {
     content: '';
     display: block;
     width: 60px;
     height: 4px;
-    background-color: var(--accent-blue);
+    background-color: var(--accent-main); /* Accent for h3 underline */
     margin-top: 0.5rem;
     border-radius: 2px;
 }
@@ -413,32 +418,32 @@ section:last-of-type {
 .education-experience-container {
     margin-top: var(--spacing-lg);
     display: grid;
-    gap: var(--spacing-xl); /* Space between education and experience blocks */
+    gap: var(--spacing-xl);
 }
 
 .education-list, .experience-list {
     display: grid;
-    gap: var(--spacing-md); /* Space between individual items */
+    gap: var(--spacing-md);
 }
 
 .edu-exp-item {
-    background-color: var(--secondary-bg); /* White background for cards */
+    background-color: var(--secondary-bg); /* Darker background for cards */
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px var(--shadow-light);
+    box-shadow: 0 4px 15px var(--shadow-dark);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    border: 1px solid var(--border-color); /* Light border */
+    border: 1px solid var(--border-color);
 }
 
 .edu-exp-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--shadow-medium);
-    border-color: var(--accent-green); /* Green border on hover */
+    box-shadow: 0 8px 20px var(--shadow-dark);
+    border-color: var(--accent-complement); /* Green border on hover */
 }
 
 .edu-exp-item h4 {
     font-size: 1.3rem;
-    color: var(--accent-blue); /* Blue for titles */
+    color: var(--accent-main); /* Main accent for titles */
     margin-bottom: var(--spacing-xs);
     font-weight: 700;
 }
@@ -451,12 +456,12 @@ section:last-of-type {
 
 .edu-exp-item .date {
     font-weight: 600;
-    color: var(--accent-orange); /* Orange for dates */
+    color: var(--accent-secondary); /* Orange for dates */
     margin-left: 0.5rem;
 }
 
-.edu-exp-item ul { /* Nested list for work experience bullet points */
-    list-style: disc; /* Standard disc bullets */
+.edu-exp-item ul {
+    list-style: disc;
     padding-left: var(--spacing-md);
     margin-top: var(--spacing-xs);
 }
@@ -465,27 +470,27 @@ section:last-of-type {
     font-size: 0.95rem;
     color: var(--light-text-color);
     margin-bottom: 0.2rem;
-    padding-left: 0; /* Remove extra padding from parent li style */
+    padding-left: 0;
 }
-.edu-exp-item ul li::before { /* Remove custom arrow for nested lists */
+.edu-exp-item ul li::before {
     content: none;
 }
 
 
 /* --- Project Grid / Services List / Skills Grid (General Card Styles) --- */
-.project-grid, .service-list, .skills-grid, .content-grid { /* Added content-grid here */
+.project-grid, .service-list, .skills-grid, .content-grid {
     display: grid;
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
     text-align: left;
 }
 
-.project-item, .service-item, .skill-category, .content-item { /* Added content-item here */
+.project-item, .service-item, .skill-category, .content-item {
     background-color: var(--secondary-bg);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px var(--shadow-light);
+    box-shadow: 0 4px 15px var(--shadow-dark);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -494,21 +499,21 @@ section:last-of-type {
 
 .project-item:hover, .service-item:hover, .skill-category:hover, .content-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 18px 35px var(--shadow-medium), 0 0 25px rgba(33, 150, 243, 0.2);
-    border-color: var(--accent-blue);
+    box-shadow: 0 18px 35px var(--shadow-dark), 0 0 25px var(--shadow-accent-light); /* Deeper shadow + accent glow */
+    border-color: var(--accent-main);
 }
 
 /* Icon Styling for Cards (SVGs) */
-.project-icon, .service-icon, .skill-icon, .content-icon { /* Added content-icon here */
+.project-icon, .service-icon, .skill-icon, .content-icon {
     width: 60px;
     height: 60px;
     margin-bottom: var(--spacing-sm);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(33, 150, 243, 0.1); /* Subtle background with primary accent */
+    background-color: rgba(79, 195, 247, 0.1); /* Subtle background with main accent */
     border-radius: 50%;
-    border: 1px solid var(--accent-blue);
+    border: 1px solid var(--accent-main);
     flex-shrink: 0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -517,7 +522,7 @@ section:last-of-type {
 .project-icon .feather-icon, .service-icon .feather-icon, .skill-icon .feather-icon, .content-icon .feather-icon {
     width: 32px;
     height: 32px;
-    stroke: var(--accent-blue); /* Icon color */
+    stroke: var(--accent-main); /* Icon color */
     fill: none;
     transition: stroke 0.3s ease;
 }
@@ -527,14 +532,14 @@ section:last-of-type {
 .service-item:hover .service-icon,
 .skill-category:hover .skill-icon,
 .content-item:hover .content-icon {
-    background-color: var(--accent-blue);
-    border-color: var(--accent-blue);
+    background-color: var(--accent-main);
+    border-color: var(--accent-main);
 }
 .project-item:hover .project-icon .feather-icon,
 .service-item:hover .service-icon .feather-icon,
 .skill-category:hover .skill-icon .feather-icon,
 .content-item:hover .content-icon .feather-icon {
-    stroke: var(--secondary-bg); /* Change icon color to white on hover */
+    stroke: var(--primary-bg); /* Change icon color to primary background color on hover */
 }
 
 
@@ -570,7 +575,7 @@ section:last-of-type {
 .skill-category h3 {
     color: var(--text-color);
     margin-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--border-color); /* Keep this small underline for skills for clarity */
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: var(--spacing-xs);
     display: inline-block;
 }
@@ -587,9 +592,9 @@ section:last-of-type {
 }
 .skill-category ul li::before {
     content: '•';
-    color: var(--accent-green); /* Green accent for skill list bullets */
+    color: var(--accent-complement); /* Green accent for skill list bullets */
     margin-right: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
@@ -615,7 +620,7 @@ section:last-of-type {
 
 /* --- Specific Styles for New Content Pages (certifications.html, blogs.html, case-studies.html) --- */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-bg) 0%, #DCE3EB 100%);
+    background: linear-gradient(135deg, var(--primary-bg) 0%, #15202E 100%);
     padding: var(--spacing-xl) 0;
     padding-top: calc(var(--spacing-xl) + 60px); /* Adjust for header */
     border-bottom: 1px solid var(--border-color);
@@ -633,7 +638,7 @@ section:last-of-type {
     background-color: var(--primary-bg);
 }
 .content-list-section:nth-of-type(even) {
-    background-color: var(--secondary-bg);
+    background-color: #15202E;
 }
 
 .content-grid {
@@ -647,19 +652,19 @@ section:last-of-type {
     color: var(--light-text-color);
     font-size: 0.95rem;
 }
-.content-item .content-icon { /* Specific style for icons on content pages */
-    background-color: rgba(150, 117, 205, 0.1); /* Use accent-purple for these icons */
-    border-color: var(--accent-purple);
+.content-item .content-icon {
+    background-color: rgba(186, 104, 200, 0.1); /* Use accent-purple for these icons */
+    border-color: var(--accent-tertiary);
 }
 .content-item .content-icon .feather-icon {
-    stroke: var(--accent-purple);
+    stroke: var(--accent-tertiary);
 }
 .content-item:hover .content-icon {
-    background-color: var(--accent-purple);
-    border-color: var(--accent-purple);
+    background-color: var(--accent-tertiary);
+    border-color: var(--accent-tertiary);
 }
 .content-item:hover .content-icon .feather-icon {
-    stroke: var(--secondary-bg);
+    stroke: var(--primary-bg);
 }
 
 
@@ -684,7 +689,7 @@ section:last-of-type {
 }
 
 .social-links a {
-    width: 50px; /* Larger social icons for impact */
+    width: 50px;
     height: 50px;
     display: flex;
     align-items: center;
@@ -692,26 +697,26 @@ section:last-of-type {
     border-radius: 50%;
     background-color: var(--secondary-bg);
     border: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px var(--shadow-light);
+    box-shadow: 0 2px 8px var(--shadow-dark);
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: var(--accent-blue); /* Hover with accent 1 */
-    transform: translateY(-5px) scale(1.05); /* More lift */
-    box-shadow: 0 8px 20px var(--shadow-medium), 0 0 15px rgba(33, 150, 243, 0.4);
-    border-color: var(--accent-blue);
+    background-color: var(--accent-main);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px var(--shadow-dark), 0 0 15px var(--shadow-accent-light);
+    border-color: var(--accent-main);
 }
 
 .social-links .social-svg {
-    width: 30px; /* Size of the SVG icon inside the circle */
+    width: 30px;
     height: 30px;
-    fill: var(--text-color); /* Dark color for icons on light background */
+    fill: var(--text-color); /* Light color for icons on dark background */
     transition: fill 0.3s ease;
 }
 
 .social-links a:hover .social-svg {
-    fill: var(--secondary-bg); /* Change SVG color to white on hover */
+    fill: var(--primary-bg); /* Change SVG color to primary background on hover */
 }
 
 
@@ -722,7 +727,7 @@ section:last-of-type {
     max-width: 600px;
     margin: var(--spacing-lg) auto 0;
     border: 1px solid var(--border-color);
-    box-shadow: 0 5px 20px var(--shadow-light);
+    box-shadow: 0 5px 20px var(--shadow-dark);
 }
 
 .contact-form h3 {
@@ -737,8 +742,8 @@ section:last-of-type {
     padding: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
     border: 1px solid var(--border-color);
-    border-radius: 8px; /* Slightly smaller radius for inputs */
-    background-color: var(--primary-bg); /* Input background matching overall bg */
+    border-radius: 8px;
+    background-color: var(--primary-bg); /* Input background matching primary bg */
     color: var(--text-color);
     font-family: var(--font-family-primary);
     font-size: var(--font-size-base);
@@ -749,8 +754,8 @@ section:last-of-type {
 .contact-form input[type="email"]:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+    border-color: var(--accent-main);
+    box-shadow: 0 0 10px var(--shadow-accent-light);
 }
 
 .contact-form textarea {
@@ -760,13 +765,13 @@ section:last-of-type {
 
 /* --- Footer --- */
 footer {
-    background-color: var(--secondary-bg); /* Footer is white/light */
+    background-color: var(--secondary-bg);
     color: var(--light-text-color);
     text-align: center;
     padding: var(--spacing-md) 0;
     margin-top: var(--spacing-lg);
     border-top: 1px solid var(--border-color);
-    box-shadow: 0 -2px 10px var(--shadow-light); /* Shadow at top of footer */
+    box-shadow: 0 -2px 10px var(--shadow-dark);
 }
 
 footer p {
@@ -775,40 +780,29 @@ footer p {
 }
 
 /* --- Animations (for Scroll-Reveal) --- */
-/* (These remain the same from previous versions) */
-.fade-in.hidden {
-    opacity: 0;
-}
-
-.fade-in.revealed {
-    opacity: 1;
-    transition: opacity 1s ease-out;
-}
-
-.animate-slide-up.hidden {
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.animate-slide-up.revealed {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.animate-fade-in-delay.hidden {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.animate-fade-in-delay.revealed {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
-}
+.fade-in.hidden { opacity: 0; }
+.fade-in.revealed { opacity: 1; transition: opacity 1s ease-out; }
+.animate-slide-up.hidden { opacity: 0; transform: translateY(30px); }
+.animate-slide-up.revealed { opacity: 1; transform: translateY(0); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.animate-fade-in-delay.hidden { opacity: 0; transform: translateY(20px); }
+.animate-fade-in-delay.revealed { opacity: 1; transform: translateY(0); transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s; }
 
 
 /* --- Responsive Design (Media Queries) --- */
+
+/* Desktop navigation should be visible, hamburger hidden */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important; /* Ensure nav-menu is always flex on desktop */
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+    }
+    .menu-toggle {
+        display: none !important; /* Hide 3-dot menu on desktop */
+    }
+}
+
 
 /* Tablets and smaller desktops */
 @media (max-width: 1024px) {
@@ -845,7 +839,7 @@ footer p {
         opacity: 0;
         pointer-events: none;
         transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-        box-shadow: 0 10px 20px var(--shadow-light);
+        box-shadow: 0 10px 20px var(--shadow-dark);
     }
 
     .nav-menu.open {
@@ -868,7 +862,7 @@ footer p {
     }
 
     .menu-toggle {
-        display: flex; /* Show 3-dot icon on mobile */
+        display: flex !important; /* SHOW 3-dot menu on mobile */
     }
 
     h1 { font-size: 2.2rem; }
@@ -925,30 +919,4 @@ footer p {
         width: 24px;
         height: 24px;
     }
-}
-/* 🔹 Profile Summary Card (Modern Design) */
-.summary-card {
-    background-color: #f8f9fa; /* Light background */
-    border-radius: 12px; /* Rounded corners */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    width: 80%;
-    margin: 20px auto;
-    text-align: left;
-}
-
-.summary-card h2 {
-    color: #3498db; /* Modern blue heading */
-    text-align: center;
-}
-
-.summary-card ul {
-    list-style: none;
-    padding: 0;
-}
-
-.summary-card li {
-    padding: 10px 0;
-    font-size: 18px;
-    color: #333; /* Clean readable text */
 }
