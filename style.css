@@ -926,3 +926,29 @@ footer p {
         height: 24px;
     }
 }
+/* 🔹 Profile Summary Card (Modern Design) */
+.summary-card {
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.summary-card h2 {
+    color: #3498db; /* Modern blue heading */
+    text-align: center;
+}
+
+.summary-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary-card li {
+    padding: 10px 0;
+    font-size: 18px;
+    color: #333; /* Clean readable text */
+}
