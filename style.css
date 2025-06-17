@@ -4,20 +4,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
 :root {
-    /* NEW Dark Mode Color Palette (Deep Blue/Navy) */
-    --primary-bg: #1A2535;       /* Deep Navy Blue for main background */
-    --secondary-bg: #2D3E50;     /* Slightly lighter Navy for cards/sections/header */
-    --text-color: #E0E6EE;       /* Soft White/Light Gray for primary text */
-    --light-text-color: #AAB6C3; /* Muted light gray for secondary text/paragraphs */
+    /* NEW Light Mode Color Palette (Soft, Airy, Multi-Color) - Inspired by Dribbble Link */
+    --primary-bg: #F9F9FB;       /* Very light grey-blue for main background */
+    --secondary-bg: #FFFFFF;     /* Pure White for cards/sections/header */
+    --text-color: #2F3E4C;       /* Dark blue-grey for primary text */
+    --light-text-color: #6C7A89; /* Muted blue-grey for secondary text/paragraphs */
 
-    --accent-main: #4FC3F7;      /* Primary Accent: Lighter, brighter Sky Blue */
-    --accent-secondary: #FFCA28; /* Secondary Accent: Brighter Yellow-Orange */
-    --accent-tertiary: #BA68C8;  /* Tertiary Accent: Lighter, brighter Purple */
-    --accent-complement: #81C784;/* Complementary Accent: Lighter, brighter Green */
+    --accent-main: #3F51B5;      /* Primary Accent: Deeper, sophisticated Blue */
+    --accent-secondary: #FF8F00; /* Secondary Accent: Warm Orange */
+    --accent-tertiary: #E91E63;  /* Tertiary Accent: Vibrant Pink/Magenta */
+    --accent-complement: #4CAF50;/* Complementary Accent: Clean Green */
 
-    --border-color: #3B4A5D;     /* Darker subtle border */
-    --shadow-dark: rgba(0, 0, 0, 0.4); /* Stronger shadow for dark mode */
-    --shadow-accent-light: rgba(79, 195, 247, 0.3); /* Accent shadow for glow */
+    --border-color: #E0E6ED;     /* Very light subtle border */
+    --shadow-light: rgba(0, 0, 0, 0.06); /* Very soft shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.1); /* Slightly stronger shadow on hover */
+    --shadow-accent-light: rgba(63, 81, 181, 0.2); /* Accent shadow for glow */
 
     /* Typography */
     --font-family-primary: 'Inter', sans-serif;
@@ -30,7 +31,8 @@
     --spacing-md: 2rem;
     --spacing-lg: 3.5rem;
     --spacing-xl: 5rem;
-    --border-radius: 16px; /* Larger radius for a softer, modern look */
+    --border-radius-soft: 12px;  /* Softer radius for general elements */
+    --border-radius-button: 8px; /* Slightly less rounded for buttons */
 }
 
 * {
@@ -89,31 +91,31 @@ ul {
 .btn {
     display: inline-block;
     padding: var(--spacing-sm) 1.75rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-button); /* Use button specific radius */
     text-align: center;
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     border: none;
     cursor: pointer;
     font-size: var(--font-size-base);
-    box-shadow: 0 4px 8px var(--shadow-dark); /* Deeper shadow for dark mode */
+    box-shadow: 0 4px 8px var(--shadow-light);
 }
 
-/* All hero buttons unified to same color */
-.btn.primary, .btn.secondary, .btn.tertiary {
-    background-color: var(--accent-main); /* All use the primary accent color */
-    color: var(--primary-bg); /* Text color contrast against dark primary bg */
-    border: none; /* Ensure no border from .secondary */
+/* --- Unify Hero Buttons to same color --- */
+.hero .cta-buttons .btn {
+    background-color: var(--accent-main); /* All hero buttons use the primary accent blue */
+    color: var(--secondary-bg); /* Text color is white */
+    border: none;
 }
 
-.btn.primary:hover, .btn.secondary:hover, .btn.tertiary:hover {
-    background-color: var(--accent-secondary); /* Hover with secondary accent */
+.hero .cta-buttons .btn:hover {
+    background-color: var(--accent-secondary); /* Hover with secondary accent orange */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--shadow-dark);
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
 /* Specific styling for the 'Back to Main Portfolio' button on sub-pages
-   to differentiate it slightly while keeping theme */
+   This remains a transparent/bordered style */
 .btn.secondary {
     background-color: transparent;
     color: var(--accent-main);
@@ -121,30 +123,29 @@ ul {
 }
 .btn.secondary:hover {
     background-color: var(--accent-main);
-    color: var(--primary-bg);
+    color: var(--secondary-bg);
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px var(--shadow-dark);
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
-
 
 /* For smaller buttons on sub-pages (Download Certificate/Blog/Case Study) */
 .btn.small-btn {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
     border-radius: 10px;
-    background-color: var(--accent-main); /* Use main accent for these too */
-    color: var(--primary-bg);
+    background-color: var(--accent-main); /* Use main accent for these */
+    color: var(--secondary-bg);
 }
 .btn.small-btn:hover {
     background-color: var(--accent-secondary); /* Hover with secondary accent */
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-dark);
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
 
 /* --- Header & Navigation --- */
 header {
-    background-color: var(--secondary-bg); /* Header matches card background */
+    background-color: var(--secondary-bg); /* Header is white */
     padding: var(--spacing-sm) 0;
     position: sticky;
     top: 0;
@@ -152,12 +153,12 @@ header {
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 10px var(--shadow-dark); /* Initial shadow */
+    box-shadow: 0 2px 10px var(--shadow-light); /* Initial soft shadow */
     transition: box-shadow 0.3s ease;
 }
 
 header.sticky {
-    box-shadow: 0 5px 20px var(--shadow-dark);
+    box-shadow: 0 5px 20px var(--shadow-medium);
 }
 
 header .container {
@@ -171,7 +172,7 @@ header .container {
     margin: 0;
     font-weight: 800;
     letter-spacing: -0.5px;
-    color: var(--accent-main); /* Logo text is accent color */
+    color: var(--accent-main); /* Logo text is accent blue */
 }
 
 .logo h1 a {
@@ -188,13 +189,13 @@ header .container {
 
 /* Desktop navigation links - always visible */
 .nav-menu {
-    display: flex;
+    display: flex; /* Default to flex for desktop */
     gap: var(--spacing-md);
 }
 
 .nav-menu li a {
     font-weight: 600;
-    color: var(--text-color); /* Light text on dark header */
+    color: var(--text-color); /* Dark text on light header */
     position: relative;
     padding-bottom: 8px;
     transition: color 0.3s ease;
@@ -262,10 +263,10 @@ section {
 
 /* Alternate section background for visual separation */
 section:nth-of-type(even) {
-    background-color: var(--primary-bg);
+    background-color: var(--primary-bg); /* Very light grey-blue */
 }
 section:nth-of-type(odd) {
-    background-color: #15202E; /* Slightly different dark shade */
+    background-color: var(--secondary-bg); /* Pure white */
 }
 section:last-of-type {
     padding-bottom: var(--spacing-xl);
@@ -274,8 +275,8 @@ section:last-of-type {
 
 /* Hero Section */
 .hero {
-    /* New: Background image with linear gradient overlay */
-    background: linear-gradient(rgba(26, 37, 53, 0.9), rgba(26, 37, 53, 0.9)), url('images/hero-cover.jpg') no-repeat center center/cover;
+    /* Background image with subtle gradient overlay */
+    background: linear-gradient(rgba(249, 249, 251, 0.9), rgba(249, 249, 251, 0.9)), url('images/hero-cover.jpg') no-repeat center center/cover;
     min-height: 90vh;
     display: flex;
     align-items: center;
@@ -294,8 +295,8 @@ section:last-of-type {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 10% 20%, rgba(79, 195, 247, 0.08), transparent 40%), /* Accent blue */
-                radial-gradient(circle at 90% 80%, rgba(255, 202, 40, 0.08), transparent 40%); /* Accent yellow-orange */
+    background: radial-gradient(circle at 10% 20%, rgba(63, 81, 181, 0.05), transparent 40%), /* Accent blue */
+                radial-gradient(circle at 90% 80%, rgba(255, 143, 0, 0.05), transparent 40%); /* Accent orange */
     z-index: 1;
     pointer-events: none;
 }
@@ -310,12 +311,15 @@ section:last-of-type {
 }
 
 .profile-picture img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--accent-main);
-    box-shadow: 0 0 30px var(--shadow-accent-light), 0 0 60px rgba(255, 202, 40, 0.3); /* Dual accent glow */
+    /* New: Rectangular profile picture with rounded corners */
+    width: auto; /* Allow image to take its natural width */
+    max-width: 250px; /* Max width for image */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Max height to prevent excessive size */
+    border-radius: var(--border-radius-soft); /* Soft rounded corners */
+    object-fit: cover; /* Cover the area, crop if necessary */
+    border: 3px solid var(--accent-main); /* Thinner border */
+    box-shadow: 0 8px 20px var(--shadow-medium), 0 0 40px var(--shadow-accent-light); /* Softer, subtle glow */
 }
 
 .hero-content h2 {
@@ -324,13 +328,13 @@ section:last-of-type {
     margin-bottom: var(--spacing-sm);
     text-align: center;
     color: var(--text-color);
-    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Softer text shadow */
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--accent-complement); /* Green accent for sub-line */
+    color: var(--accent-secondary); /* Use orange accent for sub-line */
     margin-top: -1.5rem;
     margin-bottom: var(--spacing-md);
 }
@@ -355,7 +359,7 @@ section:last-of-type {
 
 .intro-bullets li::before {
     content: '•';
-    color: var(--accent-main); /* Main accent bullet */
+    color: var(--accent-main); /* Main accent blue bullet */
     position: absolute;
     left: 0;
     font-size: 1.2em;
@@ -427,17 +431,17 @@ section:last-of-type {
 }
 
 .edu-exp-item {
-    background-color: var(--secondary-bg); /* Darker background for cards */
+    background-color: var(--secondary-bg); /* White background for cards */
     padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px var(--shadow-dark);
+    border-radius: var(--border-radius-soft); /* Soft rounded corners */
+    box-shadow: 0 4px 15px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     border: 1px solid var(--border-color);
 }
 
 .edu-exp-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px var(--shadow-dark);
+    box-shadow: 0 8px 20px var(--shadow-medium);
     border-color: var(--accent-complement); /* Green border on hover */
 }
 
@@ -488,9 +492,9 @@ section:last-of-type {
 .project-item, .service-item, .skill-category, .content-item {
     background-color: var(--secondary-bg);
     padding: var(--spacing-md);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-soft); /* Soft rounded corners */
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 15px var(--shadow-dark);
+    box-shadow: 0 4px 15px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -499,7 +503,7 @@ section:last-of-type {
 
 .project-item:hover, .service-item:hover, .skill-category:hover, .content-item:hover {
     transform: translateY(-10px);
-    box-shadow: 0 18px 35px var(--shadow-dark), 0 0 25px var(--shadow-accent-light); /* Deeper shadow + accent glow */
+    box-shadow: 0 18px 35px var(--shadow-medium), 0 0 25px var(--shadow-accent-light); /* Deeper shadow + accent glow */
     border-color: var(--accent-main);
 }
 
@@ -511,8 +515,8 @@ section:last-of-type {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(79, 195, 247, 0.1); /* Subtle background with main accent */
-    border-radius: 50%;
+    background-color: rgba(63, 81, 181, 0.08); /* Subtle background with main accent */
+    border-radius: 50%; /* Circular background */
     border: 1px solid var(--accent-main);
     flex-shrink: 0;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -539,7 +543,7 @@ section:last-of-type {
 .service-item:hover .service-icon .feather-icon,
 .skill-category:hover .skill-icon .feather-icon,
 .content-item:hover .content-icon .feather-icon {
-    stroke: var(--primary-bg); /* Change icon color to primary background color on hover */
+    stroke: var(--secondary-bg); /* Change icon color to white on hover */
 }
 
 
@@ -620,7 +624,7 @@ section:last-of-type {
 
 /* --- Specific Styles for New Content Pages (certifications.html, blogs.html, case-studies.html) --- */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-bg) 0%, #15202E 100%);
+    background: linear-gradient(135deg, var(--primary-bg) 0%, #E6EAF0 100%); /* Light header gradient */
     padding: var(--spacing-xl) 0;
     padding-top: calc(var(--spacing-xl) + 60px); /* Adjust for header */
     border-bottom: 1px solid var(--border-color);
@@ -638,7 +642,7 @@ section:last-of-type {
     background-color: var(--primary-bg);
 }
 .content-list-section:nth-of-type(even) {
-    background-color: #15202E;
+    background-color: var(--secondary-bg); /* Pure white */
 }
 
 .content-grid {
@@ -653,7 +657,7 @@ section:last-of-type {
     font-size: 0.95rem;
 }
 .content-item .content-icon {
-    background-color: rgba(186, 104, 200, 0.1); /* Use accent-purple for these icons */
+    background-color: rgba(233, 30, 99, 0.08); /* Use accent-tertiary (pink) for these icons */
     border-color: var(--accent-tertiary);
 }
 .content-item .content-icon .feather-icon {
@@ -664,7 +668,7 @@ section:last-of-type {
     border-color: var(--accent-tertiary);
 }
 .content-item:hover .content-icon .feather-icon {
-    stroke: var(--primary-bg);
+    stroke: var(--secondary-bg);
 }
 
 
@@ -697,37 +701,37 @@ section:last-of-type {
     border-radius: 50%;
     background-color: var(--secondary-bg);
     border: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px var(--shadow-dark);
+    box-shadow: 0 2px 8px var(--shadow-light);
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .social-links a:hover {
     background-color: var(--accent-main);
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 8px 20px var(--shadow-dark), 0 0 15px var(--shadow-accent-light);
+    box-shadow: 0 8px 20px var(--shadow-medium), 0 0 15px var(--shadow-accent-light);
     border-color: var(--accent-main);
 }
 
 .social-links .social-svg {
     width: 30px;
     height: 30px;
-    fill: var(--text-color); /* Light color for icons on dark background */
+    fill: var(--text-color); /* Dark color for icons on light background */
     transition: fill 0.3s ease;
 }
 
 .social-links a:hover .social-svg {
-    fill: var(--primary-bg); /* Change SVG color to primary background on hover */
+    fill: var(--secondary-bg); /* Change SVG color to white on hover */
 }
 
 
 .contact-form {
     background-color: var(--secondary-bg);
     padding: var(--spacing-md);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-soft); /* Soft rounded corners */
     max-width: 600px;
     margin: var(--spacing-lg) auto 0;
     border: 1px solid var(--border-color);
-    box-shadow: 0 5px 20px var(--shadow-dark);
+    box-shadow: 0 5px 20px var(--shadow-light);
 }
 
 .contact-form h3 {
@@ -771,7 +775,7 @@ footer {
     padding: var(--spacing-md) 0;
     margin-top: var(--spacing-lg);
     border-top: 1px solid var(--border-color);
-    box-shadow: 0 -2px 10px var(--shadow-dark);
+    box-shadow: 0 -2px 10px var(--shadow-light);
 }
 
 footer p {
@@ -839,7 +843,7 @@ footer p {
         opacity: 0;
         pointer-events: none;
         transition: transform 0.4s ease-out, opacity 0.4s ease-out;
-        box-shadow: 0 10px 20px var(--shadow-dark);
+        box-shadow: 0 10px 20px var(--shadow-medium);
     }
 
     .nav-menu.open {
@@ -910,6 +914,7 @@ footer p {
     .profile-picture img {
         width: 150px;
         height: 150px;
+        border-radius: 8px; /* Maintain rectangular on mobile too */
     }
     .social-links a {
         width: 40px;
