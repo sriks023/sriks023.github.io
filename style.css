@@ -1,269 +1,954 @@
-/* --- Global Dark Theme Styles --- */
+/* style.css */
+
+/* --- Global Styles & Resets --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
 :root {
-  --primary-bg: #121212;           /* Deep dark background */
-  --secondary-bg: #1E1E1E;         /* Dark card background */
-  --text-color: #EAEAEA;           /* Light text */
-  --light-text-color: #B0B0B0;     /* Muted light gray */
-  
-  --accent-blue: #00BFFF;          /* Bright blue */
-  --accent-green: #00C896;         /* Neon green */
-  --accent-orange: #FFA500;        /* Orange */
-  --accent-purple: #BA68C8;        /* Purple */
+    /* New Color Palette (Light, Modern, Multi-Color) */
+    --primary-bg: #F8F8FA;       /* Very light background */
+    --secondary-bg: #FFFFFF;     /* Pure White for cards/sections */
+    --text-color: #263238;       /* Dark charcoal for primary text */
+    --light-text-color: #546E7A; /* Muted gray for secondary text/paragraphs */
 
-  --border-color: #2A2A2A;
-  --shadow-light: rgba(0, 0, 0, 0.4);
-  --shadow-medium: rgba(0, 0, 0, 0.6);
+    --accent-blue: #2196F3;      /* Primary Accent: Vibrant Blue */
+    --accent-green: #4CAF50;     /* Secondary Accent: Green */
+    --accent-orange: #FF9800;    /* Tertiary Accent: Orange */
+    --accent-purple: #9C27B0;    /* Quaternary Accent: Purple */
 
-  --font-family-primary: 'Inter', sans-serif;
-  --font-size-base: 1.05rem;
-  --line-height-base: 1.6;
+    --border-color: #ECEFF1;     /* Light border for subtle separation */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Lighter, softer shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.12); /* Slightly stronger hover shadow */
 
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 3rem;
-  --spacing-xl: 5rem;
-  --border-radius: 14px;
+    /* Typography */
+    --font-family-primary: 'Inter', sans-serif;
+    --font-size-base: 1.05rem; /* Slightly smaller base font */
+    --line-height-base: 1.6;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3.5rem; /* Slightly less for tighter modern feel */
+    --spacing-xl: 5rem;
+    --border-radius: 16px; /* Larger radius for a softer, modern look */
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-family-primary);
-  background-color: var(--primary-bg);
-  color: var(--text-color);
-  line-height: var(--line-height-base);
-}
-
-a {
-  color: var(--accent-blue);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: var(--accent-orange);
-}
-
-h1, h2, h3, h4, h5 {
-  color: var(--text-color);
-  font-weight: 700;
-}
-
-p {
-  color: var(--light-text-color);
-  font-size: var(--font-size-base);
-  margin-bottom: var(--spacing-sm);
+    font-family: var(--font-family-primary);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: #f0f0f0; /* Change to a different shade */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
+    max-width: 1100px; /* Slightly narrower for focus */
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-orange);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h1 { font-size: 3.8rem; margin-bottom: var(--spacing-md); font-weight: 800; }
+h2 { font-size: 2.8rem; margin-bottom: var(--spacing-lg); text-align: center; font-weight: 800;}
+h3 { font-size: 1.8rem; margin-bottom: var(--spacing-sm); font-weight: 700;}
+p { margin-bottom: var(--spacing-sm); font-size: var(--font-size-base); color: var(--light-text-color);}
+
+ul {
+    list-style: none;
+    padding-left: 0;
 }
 
 /* --- Buttons --- */
 .btn {
-  display: inline-block;
-  padding: var(--spacing-sm) 1.5rem;
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  font-size: var(--font-size-base);
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
+    display: inline-block;
+    padding: var(--spacing-sm) 1.75rem; /* More horizontal padding */
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    box-shadow: 0 4px 8px var(--shadow-light);
 }
 
 .btn.primary {
-  background: var(--accent-blue);
-  color: #000;
+    background-color: var(--accent-blue);
+    color: var(--secondary-bg); /* Text color contrast */
 }
+
 .btn.primary:hover {
-  background: var(--accent-green);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px var(--shadow-medium);
+    background-color: var(--accent-green); /* Hover with secondary accent */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
 .btn.secondary {
-  background: transparent;
-  border: 2px solid var(--accent-blue);
-  color: var(--accent-blue);
+    background-color: transparent;
+    color: var(--accent-blue);
+    border: 2px solid var(--accent-blue);
 }
+
 .btn.secondary:hover {
-  background: var(--accent-blue);
-  color: #000;
+    background-color: var(--accent-blue);
+    color: var(--secondary-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
-.btn.tertiary {
-  background: var(--accent-orange);
-  color: #000;
+.btn.tertiary { /* Resume button */
+    background-color: var(--accent-orange); /* Tertiary accent */
+    color: var(--secondary-bg);
 }
+
 .btn.tertiary:hover {
-  background: var(--accent-purple);
+    background-color: var(--accent-purple); /* Quaternary accent on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-medium);
 }
 
-/* --- Header --- */
+/* For smaller buttons on sub-pages */
+.btn.small-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+}
+
+/* --- Header & Navigation --- */
 header {
-  background-color: var(--secondary-bg);
-  padding: var(--spacing-sm) 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 10px var(--shadow-light);
+    background-color: var(--secondary-bg); /* Header is white/light */
+    padding: var(--spacing-sm) 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px var(--shadow-light); /* Initial shadow */
+    transition: box-shadow 0.3s ease;
+}
+
+header.sticky {
+    box-shadow: 0 5px 20px var(--shadow-medium);
 }
 
 header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo h1 {
-  color: var(--accent-blue);
-  font-size: 2rem;
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.5px; /* Tighter letter spacing */
+    color: var(--accent-blue);
+}
+
+.logo h1 a { /* Style for logo link if it's wrapping h1 */
+    color: var(--accent-blue);
 }
 .logo h1 a:hover {
-  color: var(--accent-green);
+    color: var(--accent-orange);
 }
 
-/* --- Navigation --- */
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
 .nav-menu {
-  display: flex;
-  gap: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
 }
+
 .nav-menu li a {
-  color: var(--text-color);
-  position: relative;
+    font-weight: 600;
+    color: var(--text-color); /* Dark text on light header */
+    position: relative;
+    padding-bottom: 8px;
+    transition: color 0.3s ease;
 }
+
 .nav-menu li a::after {
-  content: '';
-  display: block;
-  height: 2px;
-  width: 0;
-  background: var(--accent-blue);
-  transition: width 0.3s ease;
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-}
-.nav-menu li a:hover::after {
-  width: 100%;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--accent-blue);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth curve */
 }
 
-/* --- Hero Section --- */
-.hero {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background: linear-gradient(135deg, #1C1C1C, #000000);
-  padding: var(--spacing-xl) 0;
-  position: relative;
-}
-.hero h2 {
-  font-size: 3rem;
-  font-weight: 800;
-}
-.hero-subtitle {
-  font-size: 1.4rem;
-  color: var(--accent-green);
-  margin-bottom: var(--spacing-md);
+.nav-menu li a:hover::after,
+.nav-menu li a.active::after,
+.nav-menu li.current-page-link a::after { /* Active state for current page */
+    width: 100%;
 }
 
-.profile-photo {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 3px solid var(--accent-blue);
-  margin-bottom: var(--spacing-sm);
-  box-shadow: 0 4px 10px var(--shadow-light);
+.nav-menu li a:hover,
+.nav-menu li a.active,
+.nav-menu li.current-page-link a { /* Active state for current page */
+    color: var(--accent-orange);
 }
+
+/* Hamburger Menu Toggle (3-dot icon) */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above nav on mobile */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+.menu-toggle .feather-icon { /* Style for the SVG icon */
+    width: 28px;
+    height: 28px;
+    stroke: var(--text-color); /* Icon color */
+    transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+.menu-toggle.open .feather-icon {
+    stroke: var(--accent-blue); /* Change color when open */
+    transform: rotate(90deg); /* Rotate for a dynamic effect */
+}
+
 
 /* --- Sections --- */
 section {
-  padding: var(--spacing-xl) 0;
-  background-color: var(--primary-bg);
-}
-section:nth-of-type(even) {
-  background-color: var(--secondary-bg);
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    overflow: hidden;
 }
 
-/* --- Card Blocks (Projects, Skills, Experience) --- */
-.card {
-  background: var(--secondary-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-md);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
+section:nth-of-type(even) { /* Alternate section background for visual separation */
+    background-color: var(--primary-bg);
 }
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+section:nth-of-type(odd) { /* Alternate section background for visual separation */
+    background-color: #F8F8FA; /* Slightly lighter for contrast */
+}
+section:last-of-type {
+    padding-bottom: var(--spacing-xl); /* Ensure consistent padding at bottom */
 }
 
-.card h3 {
-  color: var(--accent-blue);
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #F0F4F8 0%, #DCE3EB 100%); /* Soft gradient */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(var(--spacing-xl) + 80px); /* Adjust for header height */
+    padding-bottom: var(--spacing-xl);
 }
-.card p {
-  color: var(--light-text-color);
+
+.hero::before { /* Subtle radial gradient overlay for dynamism */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.08), transparent 40%), /* Blue accent */
+                radial-gradient(circle at 90% 80%, rgba(255, 152, 0, 0.08), transparent 40%); /* Orange accent */
+    z-index: 1;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.profile-photo {
+  width: 150px; /* Adjust size */
+  height: 150px;
+  border-radius: 50%; /* Makes it circular */
+  border: 5px solid #3498db; /* Adds a stylish border */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+
+}
+
+.hero-content h2 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+    color: var(--text-color);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Soft text shadow */
+}
+
+.hero-subtitle { /* New style for the sub-line */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-green); /* Use a different accent color */
+    margin-top: -1.5rem; /* Pull it up closer to the name */
+    margin-bottom: var(--spacing-md);
+}
+
+.intro-bullets { /* Style for the new bulleted bio */
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--light-text-color);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.intro-bullets li {
+    position: relative;
+    padding-left: 1.5em; /* Space for custom bullet */
+    margin-bottom: 0.5em;
+    font-size: 1.15rem; /* Slightly smaller than main p in hero */
+}
+
+.intro-bullets li::before {
+    content: '•';
+    color: var(--accent-blue); /* Blue bullet */
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* --- About Section --- */
+.about-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.about-section ul li {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    position: relative;
+    padding-left: var(--spacing-md);
+    color: var(--light-text-color);
+}
+
+.about-section ul li::before {
+    content: '→';
+    color: var(--accent-blue);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.about-section h3 {
+    margin-top: var(--spacing-lg); /* More space above sub-headings */
+    margin-bottom: var(--spacing-md); /* More space below sub-headings */
+    text-align: left;
+    border-bottom: none; /* Remove underline */
+    padding-bottom: 0;
+    display: block;
+    color: var(--text-color); /* Main text color for h3 */
+    font-weight: 800; /* Bolder */
+}
+.about-section h3::after { /* Add a small accent line below h3 */
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-blue);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+
+/* Education & Experience New Templates */
+.education-experience-container {
+    margin-top: var(--spacing-lg);
+    display: grid;
+    gap: var(--spacing-xl); /* Space between education and experience blocks */
+}
+
+.education-list, .experience-list {
+    display: grid;
+    gap: var(--spacing-md); /* Space between individual items */
+}
+
+.edu-exp-item {
+    background-color: var(--secondary-bg); /* White background for cards */
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    border: 1px solid var(--border-color); /* Light border */
+}
+
+.edu-exp-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+    border-color: var(--accent-green); /* Green border on hover */
+}
+
+.edu-exp-item h4 {
+    font-size: 1.3rem;
+    color: var(--accent-blue); /* Blue for titles */
+    margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+}
+
+.edu-exp-item p {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--light-text-color);
+}
+
+.edu-exp-item .date {
+    font-weight: 600;
+    color: var(--accent-orange); /* Orange for dates */
+    margin-left: 0.5rem;
+}
+
+.edu-exp-item ul { /* Nested list for work experience bullet points */
+    list-style: disc; /* Standard disc bullets */
+    padding-left: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+}
+
+.edu-exp-item ul li {
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+    margin-bottom: 0.2rem;
+    padding-left: 0; /* Remove extra padding from parent li style */
+}
+.edu-exp-item ul li::before { /* Remove custom arrow for nested lists */
+    content: none;
+}
+
+
+/* --- Project Grid / Services List / Skills Grid (General Card Styles) --- */
+.project-grid, .service-list, .skills-grid, .content-grid { /* Added content-grid here */
+    display: grid;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    text-align: left;
+}
+
+.project-item, .service-item, .skill-category, .content-item { /* Added content-item here */
+    background-color: var(--secondary-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-item:hover, .service-item:hover, .skill-category:hover, .content-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px var(--shadow-medium), 0 0 25px rgba(33, 150, 243, 0.2);
+    border-color: var(--accent-blue);
+}
+
+/* Icon Styling for Cards (SVGs) */
+.project-icon, .service-icon, .skill-icon, .content-icon { /* Added content-icon here */
+    width: 60px;
+    height: 60px;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(33, 150, 243, 0.1); /* Subtle background with primary accent */
+    border-radius: 50%;
+    border: 1px solid var(--accent-blue);
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Style for the actual SVG inside the icon containers */
+.project-icon .feather-icon, .service-icon .feather-icon, .skill-icon .feather-icon, .content-icon .feather-icon {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent-blue); /* Icon color */
+    fill: none;
+    transition: stroke 0.3s ease;
+}
+
+/* Hover effects for icons */
+.project-item:hover .project-icon,
+.service-item:hover .service-icon,
+.skill-category:hover .skill-icon,
+.content-item:hover .content-icon {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+.project-item:hover .project-icon .feather-icon,
+.service-item:hover .service-icon .feather-icon,
+.skill-category:hover .skill-icon .feather-icon,
+.content-item:hover .content-icon .feather-icon {
+    stroke: var(--secondary-bg); /* Change icon color to white on hover */
+}
+
+
+/* Portfolio Section Grid */
+.project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.project-item h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xs);
+}
+.project-item p {
+    color: var(--light-text-color);
+}
+
+/* Services Section Grid */
+.service-list {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.service-item h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xs);
+}
+.service-item p {
+    color: var(--light-text-color);
+}
+
+
+/* Skills Section Grid */
+.skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.skill-category h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border-color); /* Keep this small underline for skills for clarity */
+    padding-bottom: var(--spacing-xs);
+    display: inline-block;
+}
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+.skill-category ul li {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: var(--light-text-color);
+}
+.skill-category ul li::before {
+    content: '•';
+    color: var(--accent-green); /* Green accent for skill list bullets */
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* --- Resume Section --- */
+.resume-section {
+    text-align: center;
+}
+.resume-section p {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+}
+
+/* --- Content Summary Sections (Certifications, Blogs, Case Studies) --- */
+.content-summary-section {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+/* No explicit background change here, relies on section:nth-of-type(even/odd) */
+.content-summary-section p {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+}
+
+/* --- Specific Styles for New Content Pages (certifications.html, blogs.html, case-studies.html) --- */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, #DCE3EB 100%);
+    padding: var(--spacing-xl) 0;
+    padding-top: calc(var(--spacing-xl) + 60px); /* Adjust for header */
+    border-bottom: 1px solid var(--border-color);
+}
+.page-header p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-list-section {
+    padding: var(--spacing-xl) 0;
+}
+.content-list-section:nth-of-type(odd) {
+    background-color: var(--primary-bg);
+}
+.content-list-section:nth-of-type(even) {
+    background-color: var(--secondary-bg);
+}
+
+.content-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.content-item h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-xs);
+}
+.content-item p {
+    color: var(--light-text-color);
+    font-size: 0.95rem;
+}
+.content-item .content-icon { /* Specific style for icons on content pages */
+    background-color: rgba(150, 117, 205, 0.1); /* Use accent-purple for these icons */
+    border-color: var(--accent-purple);
+}
+.content-item .content-icon .feather-icon {
+    stroke: var(--accent-purple);
+}
+.content-item:hover .content-icon {
+    background-color: var(--accent-purple);
+    border-color: var(--accent-purple);
+}
+.content-item:hover .content-icon .feather-icon {
+    stroke: var(--secondary-bg);
+}
+
+
+
+/* --- Contact Section --- */
+.contact-section {
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    color: var(--light-text-color);
+}
+
+.social-links {
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+}
+
+.social-links a {
+    width: 50px; /* Larger social icons for impact */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--accent-blue); /* Hover with accent 1 */
+    transform: translateY(-5px) scale(1.05); /* More lift */
+    box-shadow: 0 8px 20px var(--shadow-medium), 0 0 15px rgba(33, 150, 243, 0.4);
+    border-color: var(--accent-blue);
+}
+
+.social-links .social-svg {
+    width: 30px; /* Size of the SVG icon inside the circle */
+    height: 30px;
+    fill: var(--text-color); /* Dark color for icons on light background */
+    transition: fill 0.3s ease;
+}
+
+.social-links a:hover .social-svg {
+    fill: var(--secondary-bg); /* Change SVG color to white on hover */
+}
+
+
+.contact-form {
+    background-color: var(--secondary-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    margin: var(--spacing-lg) auto 0;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 20px var(--shadow-light);
+}
+
+.contact-form h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* Slightly smaller radius for inputs */
+    background-color: var(--primary-bg); /* Input background matching overall bg */
+    color: var(--text-color);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 /* --- Footer --- */
 footer {
-  background-color: var(--secondary-bg);
-  color: var(--light-text-color);
-  padding: var(--spacing-md);
-  text-align: center;
-  font-size: 0.9rem;
-  border-top: 1px solid var(--border-color);
+    background-color: var(--secondary-bg); /* Footer is white/light */
+    color: var(--light-text-color);
+    text-align: center;
+    padding: var(--spacing-md) 0;
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px var(--shadow-light); /* Shadow at top of footer */
 }
 
-/* --- Contact / Social --- */
-.social-links a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  background: var(--primary-bg);
-  border-radius: 50%;
-  border: 1px solid var(--border-color);
-  margin: 0 0.4rem;
-  transition: all 0.3s ease;
-}
-.social-links a:hover {
-  background: var(--accent-blue);
-  border-color: var(--accent-blue);
-  transform: scale(1.1);
-}
-.social-links svg {
-  fill: var(--text-color);
-  width: 24px;
-  height: 24px;
-}
-.social-links a:hover svg {
-  fill: #000;
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
-/* --- Responsive --- */
+/* --- Animations (for Scroll-Reveal) --- */
+/* (These remain the same from previous versions) */
+.fade-in.hidden {
+    opacity: 0;
+}
+
+.fade-in.revealed {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+.animate-slide-up.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animate-slide-up.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-fade-in-delay.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animate-fade-in-delay.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* Tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    .hero-content h2 { font-size: 2.8rem; }
+    .hero-content p { font-size: 1.1rem; }
+
+    .nav-menu {
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Mobile devices */
 @media (max-width: 768px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.8rem; }
-  .nav-menu {
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-  .cta-buttons {
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-bg);
+        border-top: 1px solid var(--border-color);
+        padding: var(--spacing-md) 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+        box-shadow: 0 10px 20px var(--shadow-light);
+    }
+
+    .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-menu li {
+        text-align: center;
+        margin: var(--spacing-xs) 0;
+    }
+    .nav-menu li a {
+        display: block;
+        padding: var(--spacing-sm);
+        border-bottom: 1px solid var(--border-color);
+    }
+    .nav-menu li:last-child a {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show 3-dot icon on mobile */
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.4rem; }
+    p { font-size: 0.95rem; }
+    .btn { padding: 0.8rem 1.5rem; font-size: 0.95rem; }
+
+    section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    .intro-bullets {
+        font-size: 1rem;
+    }
+    .intro-bullets li {
+        font-size: 0.95rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .cta-buttons .btn {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .project-grid, .service-list, .skills-grid, .content-grid {
+        grid-template-columns: 1fr;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .contact-form {
+        margin: var(--spacing-md) auto;
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .profile-picture img {
+        width: 150px;
+        height: 150px;
+    }
+    .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+    .social-links .social-svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+/* 🔹 Profile Summary Card (Modern Design) */
+.summary-card {
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.summary-card h2 {
+    color: #3498db; /* Modern blue heading */
+    text-align: center;
+}
+
+.summary-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.summary-card li {
+    padding: 10px 0;
+    font-size: 18px;
+    color: #333; /* Clean readable text */
 }
