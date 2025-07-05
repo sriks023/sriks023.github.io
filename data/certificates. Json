@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Data Analysis with Python",
+        "issuer": "Coursera",
+        "date": "2023-08-15",
+        "link": "https://example.com/certificate1"
+    },
+    {
+        "name": "Tableau Fundamentals",
+        "issuer": "Udemy",
+        "date": "2023-05-20",
+        "link": "https://example.com/certificate2"
+    }
+]
